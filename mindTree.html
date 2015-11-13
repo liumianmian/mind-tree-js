@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>jsMind</title>
+    <script type="text/javascript" src="js/jsmind.js"></script>
+    <script type="text/javascript" src="js/jsmind.draggable.js"></script>
+    <script type="text/javascript" src="js/jsmind.screenshot.js"></script>
+    <link type="text/css" rel="stylesheet" href="style/jsmind.css" />
+    <style type="text/css">
+        #jsmind_container{
+            float:left;
+            width:1000px;
+            height:600px;
+            border:solid 1px #ccc;
+            background:#f4f4f4;
+        }
+    </style>
+</head>
+<body>
+<div id="jsmind_container"></div>
+<script type="text/javascript">
+    var options = {
+        container:'jsmind_container',
+        theme:'greensea',
+        editable:true
+    }
+
+    var _jm = jsMind.show(options);
+
+    var mind = {
+        "meta":{
+            "name":"炫踪网络",
+            "author":"liumianjun@shinezone.com",
+            "version":"1.0"
+        },
+        "format":"node_tree",
+        "data":{"id":"root","topic":"炫踪网络","children":[
+            {"id":"easy","topic":"TD项目组","direction":"left","children":[
+                {"id":"easy1","topic":"前端","direction":"left","children":[
+                    {"id":"easy11","topic":"焦中兴"},
+                    {"id":"easy12","topic":"张存"},
+                    {"id":"easy13","topic":"张圣友"}
+                ]},
+                {"id":"easy2","topic":"后端","direction":"left","children":[
+                    {"id":"easy21","topic":"刘美君"},
+                    {"id":"easy22","topic":"张林"}
+                ]},
+                {"id":"easy3","topic":"策划","direction":"left","children":[
+                    {"id":"easy31","topic":"沉沉为"},
+                    {"id":"easy32","topic":"周易"},
+                    {"id":"easy33","topic":"陈本"}
+                ]}
+            ]},
+            {"id":"open","topic":"DOL项目组","direction":"right","children":[
+                {"id":"open1","topic":"前端"},
+                {"id":"open2","topic":"后端"},
+                {"id":"easy3","topic":"策划"}
+            ]},
+            {"id":"powerful","topic":"FS项目组","direction":"right","children":[
+                {"id":"powerful1","topic":"前端"},
+                {"id":"powerful3","topic":"后端"},
+                {"id":"easy3","topic":"策划"}
+            ]},
+            {"id":"other","topic":"FV项目组","direction":"left","children":[
+                {"id":"other1","topic":"前端"},
+                {"id":"other1","topic":"后端"},
+                {"id":"easy3","topic":"策划"}
+            ]}
+        ]}
+    };
+
+    _jm.show(mind);
+</script>
+</body>
+</html>
