@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-<div id="jsmind_container"></div>
+<div id="jsmind_container" style="height: 800px;width: 100%;"></div>
 <script type="text/javascript">
     var options = {
         container:'jsmind_container',
@@ -29,6 +29,42 @@
 
     var _jm = jsMind.show(options);
 
+    var mindTreeData = [
+        {"id":"easy","topic":"TD项目组","direction":"left","children":[
+            {"id":"easy1","topic":"前端","direction":"left","children":[
+                {"id":"easy11","topic":"焦中兴"},
+                {"id":"easy12","topic":"张存"},
+                {"id":"easy13","topic":"张圣友"}
+            ]},
+            {"id":"easy2","topic":"后端","direction":"left","children":[
+                {"id":"easy21","topic":"刘美君"},
+                {"id":"easy22","topic":"张林"}
+            ]},
+            {"id":"easy3","topic":"策划","direction":"left","children":[
+                {"id":"easy31","topic":"沉沉为"},
+                {"id":"easy32","topic":"周易"},
+                {"id":"easy33","topic":"陈本"}
+            ]}
+        ]},
+        {"id":"open","topic":"DOL项目组","direction":"right","children":[
+            {"id":"open1","topic":"前端"},
+            {"id":"open2","topic":"后端"},
+            {"id":"easy3","topic":"策划"}
+        ]},
+        {"id":"powerful","topic":"FS项目组","direction":"right","children":[
+            {"id":"powerful1","topic":"前端"},
+            {"id":"powerful3","topic":"后端"},
+            {"id":"easy3","topic":"策划"}
+        ]},
+        {"id":"other","topic":"FV项目组","direction":"left","children":[
+            {"id":"other1","topic":"前端"},
+            {"id":"other1","topic":"后端"},
+            {"id":"easy3","topic":"策划"}
+        ]}
+    ];
+
+    var mindTreeData = [{"id":"p0","topic":"\u63a5\u6d3d","direction":"left","children":[{"id":"c00","topic":"\u8054\u7cfb"},{"id":"c10","topic":"\u6c9f\u901a\u6d77\u5916\u610f\u5411"},{"id":"c20","topic":"\u83b7\u53d6\u4ea7\u54c1"},{"id":"c30","topic":"\u521d\u7b5b"}]},{"id":"p1","topic":"\u4ea7\u54c1\u521d\u9009","direction":"left","children":[{"id":"c01","topic":"\u53d1\u884c\u4f1a\u8bae"},{"id":"c11","topic":"\u6e38\u620f\u5c55\u793a"},{"id":"c21","topic":"\u56e2\u961f\u4ecb\u7ecd"},{"id":"c31","topic":"\u4ea7\u54c1\u521d\u9009-\u8fdb\u5165B\u8f6e"}]},{"id":"p2","topic":"B\u8f6e\u6d4b\u8bd5","direction":"left","children":[{"id":"c02","topic":"\u6838\u5fc3\u73a9\u6cd5"},{"id":"c12","topic":"\u6587\u5316"}]},{"id":"p3","topic":"B\u8f6e\u6c9f\u901a","direction":"left","children":[{"id":"p330","topic":"\u6295\u878d\u8d44\u6c9f\u901a","direction":"left","children":[{"id":"c3300","topic":"\u8fdb\u5165\u6295\u8d44\u6d41\u7a0b"}]}]},{"id":"p4","topic":"\u4ea7\u54c1\u7cbe\u9009","direction":"left","children":[{"id":"c04","topic":"\u53d1\u884c\u4f1a\u8bae"},{"id":"c14","topic":"B\u8f6e\u6d4b\u8bd5\u7ed3\u8bba\u6c9f\u901a"},{"id":"c24","topic":"B\u8f6e\u6c9f\u901a\u7ed3\u8bba\u540c\u6b65"},{"id":"c34","topic":"\u4ea7\u54c1\u7cbe\u9009-\u8fdb\u5165C\u8f6e"}]},{"id":"p5","topic":"C\u8f6e\u6d4b\u8bd5","direction":"right","children":[{"id":"c05","topic":"\u6df1\u5165\u6d4b\u8bd5"},{"id":"c15","topic":"\u4e2d\u957f\u671f\u6a21\u62df\u6d4b\u8bd5"},{"id":"c25","topic":"\u6570\u503c\u6d4b\u8bd5"},{"id":"c35","topic":"\u7ec6\u8282\u7b49"}]},{"id":"p6","topic":"C\u8f6e\u6c9f\u901a","direction":"right","children":[{"id":"c06","topic":"\u7b2c\u4e8c\u8f6e\u4ef7\u683c"},{"id":"c16","topic":"\u4f18\u5316\u9700\u6c42"},{"id":"c26","topic":"\u53ef\u80fd\u7684\u5408\u4f5c\u65f6\u95f4\u8868"}]},{"id":"p7","topic":"\u4ea7\u54c1\u786e\u5b9a","direction":"right","children":[{"id":"c07","topic":"\u53d1\u884c\u4f1a\u8bae"},{"id":"c17","topic":"C\u8f6e\u6d4b\u8bd5\u7ed3\u8bba\u6c9f\u901a"},{"id":"c27","topic":"C\u8f6e\u6c9f\u901a\u7ed3\u8bba\u540c\u6b65"},{"id":"c37","topic":"\u4ea7\u54c1\u7cbe\u9009-\u8fdb\u5165C\u8f6e"}]},{"id":"p8","topic":"\u5546\u52a1\u73af\u8282","direction":"right","children":[{"id":"c08","topic":"\u786e\u5b9a\u4ea7\u54c1\u4e0e\u533a\u57df"},{"id":"c18","topic":"\u786e\u5b9a\u65f6\u95f4"},{"id":"c28","topic":"\u786e\u5b9a\u4ef7\u683c"},{"id":"c38","topic":"\u786e\u5b9a\u4ed8\u6b3e\u65b9\u5f0f"},{"id":"c48","topic":"\u786e\u5b9a\u5408\u540c\u5176\u4ed6\u4fe1\u606f"},{"id":"c58","topic":"\u5408\u540c\u62df\u5b9a"},{"id":"c68","topic":"\u5408\u540c\u7b7e\u7f72"},{"id":"c78","topic":"\u6b3e\u9879\u8ddf\u8e2a"}]},{"id":"p9","topic":"\u4ea7\u54c1\u4fee\u6539\u4e0e\u63a5\u5165","direction":"left","children":[{"id":"p390","topic":"\u4fee\u6539","direction":"right","children":[{"id":"c3900","topic":"\u4f18\u5316\u578b\u4fee\u6539"},{"id":"c3910","topic":"\u9488\u5bf9\u6027\u4f18\u5316"}]},{"id":"c49","topic":"\u4fee\u6539\u540e\u6d4b\u8bd5"}]},{"id":"p10","topic":"\u4ea7\u54c1\u53d1\u5e03","direction":"right","children":[{"id":"p0100","topic":"\u53d1\u5e03\u82f9\u679c","direction":"left","children":[{"id":"c01000","topic":"\u6839\u636e\u8ba1\u5212\u786e\u8ba4\u82f9\u679c\u5236\u4f5c\u5b8c\u6210\u7684\u65f6\u95f4"},{"id":"c01010","topic":"\u786e\u8ba4\u53d1\u5e03\u7528\u7684\u5f00\u53d1\u8005\u8d26\u53f7"},{"id":"c01020","topic":"\u5f00\u53d1\u8005\u8d26\u53f7\u4fe1\u606f\u786e\u8ba4"},{"id":"c01030","topic":"\u5236\u4f5c\u548c\u786e\u8ba4\u4ecb\u7ecd\uff0c\u56fe\u7247\uff0c\u56fe\u6807\uff0c\u540d\u79f0"},{"id":"c01040","topic":"\u6b63\u5f0f\u63d0\u4ea4\u5ba1\u6838"}]},{"id":"c110","topic":"\u53d1\u5e03android"}]},{"id":"p11","topic":"\u63a8\u5e7f","direction":"left","children":[{"id":"p2110","topic":"\u7b2c\u4e09\u8f6e","direction":"right","children":[{"id":"c21100","topic":"\u6574\u5408\u8425\u9500"}]}]},{"id":"p12","topic":"\u90e8\u95e8\u89c4\u8303","direction":"right","children":[{"id":"p1120","topic":"\u6e38\u620f\u5b9a\u7ea7\u6807\u51c6","direction":"right","children":[{"id":"c11200","topic":"\u6e38\u620f\u6d4b\u8bd5\u6d41\u7a0b"}]},{"id":"c212","topic":"\u6295\u8d44\u6d41\u7a0b"},{"id":"c312","topic":"\u53d1\u884c\u4e3b\u6d41\u7a0b"},{"id":"c412","topic":"\u79fb\u52a8\u4ea7\u54c1\u53d1\u5e03\u6d41\u7a0b"},{"id":"c512","topic":"\u53d1\u884c\u90e8\u95e8\u7ee9\u6548\u8003\u6838\u548c\u5956\u52b1\u5236\u5ea6"}]}];
+
     var mind = {
         "meta":{
             "name":"炫踪网络",
@@ -36,39 +72,7 @@
             "version":"1.0"
         },
         "format":"node_tree",
-        "data":{"id":"root","topic":"炫踪网络","children":[
-            {"id":"easy","topic":"TD项目组","direction":"left","children":[
-                {"id":"easy1","topic":"前端","direction":"left","children":[
-                    {"id":"easy11","topic":"焦中兴"},
-                    {"id":"easy12","topic":"张存"},
-                    {"id":"easy13","topic":"张圣友"}
-                ]},
-                {"id":"easy2","topic":"后端","direction":"left","children":[
-                    {"id":"easy21","topic":"刘美君"},
-                    {"id":"easy22","topic":"张林"}
-                ]},
-                {"id":"easy3","topic":"策划","direction":"left","children":[
-                    {"id":"easy31","topic":"沉沉为"},
-                    {"id":"easy32","topic":"周易"},
-                    {"id":"easy33","topic":"陈本"}
-                ]}
-            ]},
-            {"id":"open","topic":"DOL项目组","direction":"right","children":[
-                {"id":"open1","topic":"前端"},
-                {"id":"open2","topic":"后端"},
-                {"id":"easy3","topic":"策划"}
-            ]},
-            {"id":"powerful","topic":"FS项目组","direction":"right","children":[
-                {"id":"powerful1","topic":"前端"},
-                {"id":"powerful3","topic":"后端"},
-                {"id":"easy3","topic":"策划"}
-            ]},
-            {"id":"other","topic":"FV项目组","direction":"left","children":[
-                {"id":"other1","topic":"前端"},
-                {"id":"other1","topic":"后端"},
-                {"id":"easy3","topic":"策划"}
-            ]}
-        ]}
+        "data":{"id":"root","topic":"炫踪网络","children":mindTreeData}
     };
 
     _jm.show(mind);
